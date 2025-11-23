@@ -1,7 +1,7 @@
 import { createSignal, createEffect } from 'solid-js';
 import type { NewsArticle, NewsResponse, NewsFilters } from '../types/news';
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api';
 
 // Signals for news state
 const [news, setNews] = createSignal<NewsArticle[]>([]);

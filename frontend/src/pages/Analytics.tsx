@@ -5,6 +5,8 @@ import './Analytics.css';
 
 Chart.register(Title, Tooltip, Legend, Colors);
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api';
+
 interface TrendData {
     date: string;
     count: number;
@@ -38,10 +40,10 @@ export default function Analytics() {
     onMount(async () => {
         try {
             const [trendsRes, sentimentRes, topicsRes, summaryRes] = await Promise.all([
-                fetch('/api/analytics/trends'),
-                fetch('/api/analytics/sentiment'),
-                fetch('/api/analytics/topics'),
-                fetch('/api/analytics/summary'),
+                fetch(`${API_BASE}/analytics/trends`),
+                fetch(`${API_BASE}/analytics/sentiment`),
+                fetch(`${API_BASE}/analytics/topics`),
+                fetch(`${API_BASE}/analytics/summary`),
             ]);
 
             const trendsData = await trendsRes.json();

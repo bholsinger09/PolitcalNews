@@ -8,19 +8,19 @@ const app = new Hono();
 function analyzeSentiment(text: string): 'positive' | 'neutral' | 'negative' {
     const positiveWords = ['success', 'growth', 'win', 'agreement', 'peace', 'progress', 'achievement'];
     const negativeWords = ['crisis', 'conflict', 'scandal', 'controversy', 'failure', 'decline', 'concern'];
-    
+
     const lowerText = text.toLowerCase();
     let positiveCount = 0;
     let negativeCount = 0;
-    
+
     positiveWords.forEach(word => {
         if (lowerText.includes(word)) positiveCount++;
     });
-    
+
     negativeWords.forEach(word => {
         if (lowerText.includes(word)) negativeCount++;
     });
-    
+
     if (positiveCount > negativeCount) return 'positive';
     if (negativeCount > positiveCount) return 'negative';
     return 'neutral';
@@ -31,20 +31,20 @@ app.get('/trends', async (c) => {
     try {
         const days = 7;
         const trends = [];
-        
+
         for (let i = days - 1; i >= 0; i--) {
             const date = subDays(new Date(), i);
             const formattedDate = format(date, 'MMM dd');
-            
+
             // Simulate daily article counts (in production, query actual data)
             const count = Math.floor(Math.random() * 50) + 30;
-            
+
             trends.push({
                 date: formattedDate,
                 count,
             });
         }
-        
+
         return c.json({ trends });
     } catch (error) {
         console.error('Error fetching trends:', error);
@@ -56,20 +56,20 @@ app.get('/trends', async (c) => {
 app.get('/sentiment', async (c) => {
     try {
         const news = await newsService.getPoliticalNews(1, 50);
-        
+
         const sentiment = {
             positive: 0,
             neutral: 0,
             negative: 0,
         };
-        
+
         news.articles.forEach(article => {
             const articleSentiment = analyzeSentiment(
                 `${article.title} ${article.description}`
             );
             sentiment[articleSentiment]++;
         });
-        
+
         return c.json({ sentiment });
     } catch (error) {
         console.error('Error analyzing sentiment:', error);
@@ -87,7 +87,7 @@ app.get('/topics', async (c) => {
             { name: 'Policy', count: Math.floor(Math.random() * 60) + 25 },
             { name: 'Elections', count: Math.floor(Math.random() * 90) + 35 },
         ];
-        
+
         return c.json({ topics });
     } catch (error) {
         console.error('Error fetching topics:', error);
@@ -99,14 +99,14 @@ app.get('/topics', async (c) => {
 app.get('/summary', async (c) => {
     try {
         const news = await newsService.getPoliticalNews(1, 100);
-        
+
         const summary = {
             totalArticles: news.articles.length,
             todayArticles: Math.floor(news.articles.length * 0.15),
             trendingTopics: 5,
             updateFrequency: '30s',
         };
-        
+
         return c.json({ summary });
     } catch (error) {
         console.error('Error fetching summary:', error);
