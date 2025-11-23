@@ -95,3 +95,28 @@
     flex: 1;
     justify-content: center;
 }
+
+@media (max-width: 768px) {
+    .news-card-image {
+        height: 180px;
+    }
+
+    .news-title {
+        font-size: 1.125rem;
+    }
+
+    .news-card-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .news-card-actions {
+        gap: 0.5rem;
+    }
+
+    .news-card-actions .btn {
+        font-size: 0.875rem;
+        padding: 0.625rem 1rem;
+    }
+}

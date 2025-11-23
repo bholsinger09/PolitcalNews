@@ -163,8 +163,22 @@
 
 @media (max-width: 768px) {
     .live-update-notification {
+        top: 70px;
         right: 10px;
         left: 10px;
         max-width: none;
+    }
+
+    .live-update-content {
+        padding: 1rem;
+    }
+
+    .live-update-actions {
+        flex-direction: column;
+    }
+
+    .btn-view,
+    .btn-dismiss {
+        width: 100%;
     }
 }

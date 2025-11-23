@@ -109,16 +109,34 @@
 }
 
 @media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 1.75rem;
+    }
+
     .filter-buttons {
         gap: 0.5rem;
     }
 
     .filter-btn {
-        padding: 0.5rem 1rem;
+        padding: 0.625rem 1rem;
         font-size: 0.875rem;
+        flex: 1 1 auto;
+        min-width: 120px;
+    }
+
+    .whitehouse-list {
+        gap: 1.25rem;
+    }
+
+    .whitehouse-card {
+        padding: 1rem;
     }
 
     .whitehouse-title {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
+    }
+
+    .whitehouse-card:hover {
+        transform: translateX(4px);
     }
 }
