@@ -3,24 +3,23 @@ import { realtimeStore } from '../store/realtimeStore';
 import './LiveUpdateNotification.css';
 
 export default function LiveUpdateNotification() {
-    const [dismissed, setDismissed] = createSignal(false);
+    const [hidden, setHidden] = createSignal(false);
 
     onMount(() => {
         realtimeStore.initialize();
     });
 
-    const handleDismiss = () => {
-        setDismissed(true);
-        setTimeout(() => setDismissed(false), 300);
+    const handleHide = () => {
+        setHidden(true);
     };
 
     const handleViewUpdate = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        handleDismiss();
+        handleHide();
     };
 
     return (
-        <Show when={realtimeStore.latestUpdate() && !dismissed()}>
+        <Show when={realtimeStore.latestUpdate() && !hidden()}>
             <div class="live-update-notification">
                 <div class="live-update-content">
                     <div class="live-update-header">
@@ -46,8 +45,8 @@ export default function LiveUpdateNotification() {
                         <button class="btn-view" onClick={handleViewUpdate}>
                             View Updates
                         </button>
-                        <button class="btn-dismiss" onClick={handleDismiss}>
-                            Dismiss
+                        <button class="btn-dismiss" onClick={handleHide}>
+                            Hide
                         </button>
                     </div>
                 </div>
