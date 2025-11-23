@@ -6,7 +6,7 @@ let io: SocketIOServer | null = null;
 export function initializeWebSocket(server: any) {
     io = new SocketIOServer(server, {
         cors: {
-            origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+            origin: ['http://localhost:3000', 'http://politcalnews.duckdns.org:3000'],
             methods: ['GET', 'POST'],
             credentials: true,
         },
