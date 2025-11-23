@@ -2,7 +2,10 @@ import { createSignal, onCleanup } from 'solid-js';
 import { io, Socket } from 'socket.io-client';
 import type { NewsArticle } from '../types/news';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const isProduction = typeof window !== 'undefined' && window.location.hostname !== 'localhost';
+const API_BASE = isProduction 
+    ? 'http://politcalnews.duckdns.org:3001'
+    : 'http://localhost:3001';
 
 let socket: Socket | null = null;
 

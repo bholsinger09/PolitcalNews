@@ -1,7 +1,10 @@
 import { createSignal } from 'solid-js';
 import type { WhiteHouseArticle } from '../types/news';
 
-const API_BASE = '/api';
+const isProduction = window.location.hostname !== 'localhost';
+const API_BASE = isProduction 
+    ? 'http://politcalnews.duckdns.org:3001/api'
+    : 'http://localhost:3001/api';
 
 // Signals for White House state
 const [whiteHouseNews, setWhiteHouseNews] = createSignal<WhiteHouseArticle[]>([]);

@@ -5,7 +5,10 @@ import './Analytics.css';
 
 Chart.register(Title, Tooltip, Legend, Colors);
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api';
+const isProduction = window.location.hostname !== 'localhost';
+const API_BASE = isProduction 
+    ? 'http://politcalnews.duckdns.org:3001/api'
+    : 'http://localhost:3001/api';
 
 interface TrendData {
     date: string;
