@@ -14,6 +14,9 @@ export default defineConfig({
   },
   preview: {
     port: 3000,
+    host: true,
+    strictPort: true,
+    allowedHosts: ['politcalnews.duckdns.org', '3.82.22.192', 'localhost'],
     proxy: {
       '/api': {
         target: 'http://localhost:3001',
