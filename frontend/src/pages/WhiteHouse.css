@@ -1,123 +1,124 @@
 .whitehouse-page {
-  animation: fadeIn 0.3s ease-in;
+    animation: fadeIn 0.3s ease-in;
 }
 
 .filter-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 .filter-btn {
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  background: var(--surface);
-  color: var(--text-secondary);
-  border: 2px solid var(--border);
-  transition: all 0.2s;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    background: var(--surface);
+    color: var(--text-secondary);
+    border: 2px solid var(--border);
+    transition: all 0.2s;
 }
 
 .filter-btn:hover {
-  background: var(--background);
-  border-color: var(--primary);
-  color: var(--primary);
+    background: var(--background);
+    border-color: var(--primary);
+    color: var(--primary);
 }
 
 .filter-btn.active {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: white;
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
 }
 
 .whitehouse-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .whitehouse-card {
-  transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .whitehouse-card:hover {
-  transform: translateX(8px);
+    transform: translateX(8px);
 }
 
 .whitehouse-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  gap: 1rem;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .type-badge {
-  padding: 0.25rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .type-badge-briefing {
-  background: #dbeafe;
-  color: #1e40af;
+    background: #dbeafe;
+    color: #1e40af;
 }
 
 .type-badge-statement {
-  background: #fef3c7;
-  color: #92400e;
+    background: #fef3c7;
+    color: #92400e;
 }
 
 .type-badge-release {
-  background: #d1fae5;
-  color: #065f46;
+    background: #d1fae5;
+    color: #065f46;
 }
 
 .whitehouse-date {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
 }
 
 .whitehouse-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-  color: var(--text);
-  line-height: 1.4;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+    line-height: 1.4;
 }
 
 .whitehouse-description {
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
-  .filter-buttons {
-    gap: 0.5rem;
-  }
-  
-  .filter-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-  }
-  
-  .whitehouse-title {
-    font-size: 1.25rem;
-  }
+    .filter-buttons {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .whitehouse-title {
+        font-size: 1.25rem;
+    }
 }

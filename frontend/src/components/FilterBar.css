@@ -1,33 +1,33 @@
 .filter-bar {
-  background: var(--surface);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  margin-bottom: 2rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .filter-group {
-  flex: 1;
-  min-width: 200px;
+    flex: 1;
+    min-width: 200px;
 }
 
 .search-input,
 .category-select {
-  width: 100%;
-  font-size: 1rem;
-  padding: 0.75rem 1rem;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
 }
 
 .category-select {
-  cursor: pointer;
-  background: white;
+    cursor: pointer;
+    background: white;
 }
 
 @media (max-width: 768px) {
-  .filter-group {
-    min-width: 100%;
-  }
+    .filter-group {
+        min-width: 100%;
+    }
 }

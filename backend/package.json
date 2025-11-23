@@ -1,26 +1,26 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "lint": "eslint src --ext .ts"
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.12.0",
-    "@hono/zod-validator": "^0.2.2",
-    "hono": "^4.5.8",
-    "zod": "^3.23.8"
-  },
-  "devDependencies": {
-    "@types/node": "^20.14.15",
-    "@vitest/coverage-v8": "^2.0.5",
-    "tsx": "^4.16.5",
-    "typescript": "^5.5.4",
-    "vitest": "^2.0.5"
-  }
+    "name": "backend",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "tsx watch src/index.ts",
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "test": "vitest",
+        "test:coverage": "vitest --coverage",
+        "lint": "eslint src --ext .ts"
+    },
+    "dependencies": {
+        "@hono/node-server": "^1.12.0",
+        "@hono/zod-validator": "^0.2.2",
+        "hono": "^4.5.8",
+        "zod": "^3.23.8"
+    },
+    "devDependencies": {
+        "@types/node": "^20.14.15",
+        "@vitest/coverage-v8": "^2.0.5",
+        "tsx": "^4.16.5",
+        "typescript": "^5.5.4",
+        "vitest": "^2.0.5"
+    }
 }

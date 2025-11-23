@@ -1,28 +1,28 @@
 .app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .main-content {
-  flex: 1;
-  padding: 2rem 0;
+    flex: 1;
+    padding: 2rem 0;
 }
 
 .footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 2rem 0;
-  margin-top: 4rem;
-  text-align: center;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    text-align: center;
 }
 
 .footer p {
-  margin: 0.25rem 0;
-  color: var(--text-secondary);
+    margin: 0.25rem 0;
+    color: var(--text-secondary);
 }
 
 .performance-note {
-  font-size: 0.875rem;
-  font-weight: 500;
+    font-size: 0.875rem;
+    font-weight: 500;
 }
