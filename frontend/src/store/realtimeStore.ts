@@ -4,7 +4,7 @@ import type { NewsArticle } from '../types/news';
 
 const isProduction = typeof window !== 'undefined' && window.location.hostname !== 'localhost';
 const API_BASE = isProduction 
-    ? 'http://politcalnews.duckdns.org:3001'
+    ? 'https://politcalnews.duckdns.org'
     : 'http://localhost:3001';
 
 let socket: Socket | null = null;

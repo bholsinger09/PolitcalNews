@@ -7,7 +7,7 @@ Chart.register(Title, Tooltip, Legend, Colors);
 
 const isProduction = window.location.hostname !== 'localhost';
 const API_BASE = isProduction 
-    ? 'http://politcalnews.duckdns.org:3001/api'
+    ? 'https://politcalnews.duckdns.org/api'
     : 'http://localhost:3001/api';
 
 interface TrendData {
