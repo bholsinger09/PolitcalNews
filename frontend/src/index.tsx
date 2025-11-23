@@ -2,12 +2,14 @@ import { render } from 'solid-js/web';
 import { Route, Router } from '@solidjs/router';
 import { lazy, Show } from 'solid-js';
 import Header from './components/Header';
+import LiveUpdateNotification from './components/LiveUpdateNotification';
 import './styles/global.css';
 import './App.css';
 
 const Home = lazy(() => import('./pages/Home'));
 const SavedNews = lazy(() => import('./pages/SavedNews'));
 const WhiteHouse = lazy(() => import('./pages/WhiteHouse'));
+const Analytics = lazy(() => import('./pages/Analytics'));
 
 const root = document.getElementById('root');
 
@@ -22,6 +24,7 @@ render(
         <Router root={(props) => (
             <div class="app">
                 <Header />
+                <LiveUpdateNotification />
                 <main class="main-content">
                     {props.children}
                 </main>
@@ -29,7 +32,7 @@ render(
                     <div class="container">
                         <p>&copy; 2024 PoliticalNews. Built with Solid.js & Hono.</p>
                         <p class="performance-note">
-                            ⚡ Optimized for performance with caching and lazy loading
+                            ⚡ Real-time updates • Analytics Dashboard • Performance Optimized
                         </p>
                     </div>
                 </footer>
@@ -38,6 +41,7 @@ render(
             <Route path="/" component={Home} />
             <Route path="/saved" component={SavedNews} />
             <Route path="/whitehouse" component={WhiteHouse} />
+            <Route path="/analytics" component={Analytics} />
         </Router>
     ),
     root!,

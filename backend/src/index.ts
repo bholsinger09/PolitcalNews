@@ -1,9 +1,11 @@
-import { serve } from '@hono/node-server';
+import { serve, createAdaptorServer } from '@hono/node-server';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { logger } from 'hono/logger';
 import newsRoutes from './routes/news.js';
 import whitehouseRoutes from './routes/whitehouse.js';
+import analyticsRoutes from './routes/analytics.js';
+import { initializeWebSocket } from './services/websocket.js';
 
 const app = new Hono();
 
@@ -22,6 +24,7 @@ app.get('/health', (c) => {
 // Routes
 app.route('/api/news', newsRoutes);
 app.route('/api/whitehouse', whitehouseRoutes);
+app.route('/api/analytics', analyticsRoutes);
 
 // 404 handler
 app.notFound((c) => {
@@ -36,11 +39,15 @@ app.onError((err, c) => {
 
 const port = parseInt(process.env.PORT || '3001');
 
-console.log(`🚀 Server is running on port ${port}`);
+// Create HTTP server for WebSocket support
+const server = createAdaptorServer(app);
 
-serve({
-    fetch: app.fetch,
-    port,
+// Initialize WebSocket
+initializeWebSocket(server);
+
+server.listen(port, () => {
+    console.log(`🚀 Server is running on port ${port}`);
+    console.log(`⚡ WebSocket server initialized`);
 });
 
 export default app;

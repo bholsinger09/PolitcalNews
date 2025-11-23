@@ -17,6 +17,9 @@ export default function Header() {
                         <A href="/whitehouse" class="nav-link" activeClass="active">
                             White House
                         </A>
+                        <A href="/analytics" class="nav-link" activeClass="active">
+                            Analytics
+                        </A>
                         <A href="/saved" class="nav-link" activeClass="active">
                             Saved
                         </A>
