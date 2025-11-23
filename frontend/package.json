@@ -1,0 +1,27 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "solid-js": "^1.8.18",
+    "@solidjs/router": "^0.13.5"
+  },
+  "devDependencies": {
+    "@solidjs/testing-library": "^0.8.7",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@vitest/coverage-v8": "^2.0.5",
+    "jsdom": "^24.1.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5",
+    "vite-plugin-solid": "^2.10.2",
+    "vitest": "^2.0.5"
+  }
+}
